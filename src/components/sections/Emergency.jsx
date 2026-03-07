@@ -52,7 +52,7 @@ function Emergency({ colorMode }) {
       textSvg = "text-red-800 ";
   }
   return (
-    <div>
+    <div className="bg-white">
       <section className="relative py-8 bg-red-700/30 border-y border-red-900/30 overflow-hidden font-secondFont">
         {/* Background Pulse Effect */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(200,58,38,0.1)_0%,transparent_70%)] animate-pulse" />

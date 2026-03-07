@@ -71,14 +71,14 @@ function FooterNovoTemplate({
   return (
     <SectionArea
       className={`${backgroundMode} pb-4`}
-      paddingtop={!showGlobalButtonsLps}
+      paddingtop={true}
       paddingbot={false}
     >
       <SectionWrapper>
         <footer className={`${textOpacity}`}>
           <div className="container mx-auto">
             <div
-              className={`grid sm:grid-cols-2 lg:grid-cols-3 ${grid} items-start gap-12 tablet2:gap-2 desktop1:gap-12 mb-8 w-full ${showGlobalButtonsLps ? "hidden" : "flex"}`}
+              className={`grid sm:grid-cols-2 lg:grid-cols-3 ${grid} items-start gap-12 tablet2:gap-2 desktop1:gap-12 mb-8 w-full`}
             >
               {/* Logo e infos */}
               <div className="space-y-6">
@@ -86,14 +86,14 @@ function FooterNovoTemplate({
                   className="cursor-pointer"
                   href="/"
                   onClick={() => window.location.reload()}
-                  aria-label="recarregar página "
+                  aria-label="recarregar página"
                 >
                   <img
                     src={content.texts.navbar.logo.imgDesktop}
                     alt={content.texts.navbar.logo.alt}
-                    className="w-[20%] desktop1:w-[50%]"
+                    className="w-[20%] desktop1:w-[30%]"
                     width={350}
-                    height={247}
+                    height={390}
                     fetchPriority="high"
                   />
                 </a>
@@ -247,13 +247,11 @@ function FooterNovoTemplate({
               )} */}
             </div>
 
-            {!showGlobalButtonsLps && (
-              <hr
-                className={`border-t pb-6  ${text} ${
-                  colorMode === "light" ? "opacity-90" : "opacity-20"
-                } w-full`}
-              />
-            )}
+            <hr
+              className={`border-t pb-6  border-white ${
+                colorMode === "light" ? "opacity-90" : "opacity-20"
+              } w-full`}
+            />
 
             {/* Footer Bottom */}
             <div
