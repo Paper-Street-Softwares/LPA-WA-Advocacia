@@ -326,8 +326,8 @@ const content = {
         },
 
         card3: {
-          title: <>Defesa forte em casos julgados por jurados.</>,
-          subtitle: <>Audiência de Custódia</>,
+          title: <>Audiência de Custódia</>,
+          subtitle: <>Atuação imediata para evitar prisão injusta.</>,
           description: (
             <div>
               A_Definir
