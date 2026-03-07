@@ -8,7 +8,7 @@ import imgFeatures from "../assets/imgs/features/imgServices.webp";
 import aboutImg from "../assets/imgs/about/aboutImg.webp";
 // import team1 from '../assets/imgs/team/team1.webp'
 // import team2 from '../assets/imgs/team/team2.webp'
-// import aboutSocialImg from "../assets/imgs/about/aboutSocial.webp";
+import aboutSocialImg from "../assets/imgs/about/aboutSocial.webp";
 
 import imgSteps from "../assets/imgs/steps/imgSteps.webp";
 // import logo1 from '../assets/imgs/parceria/Logo1.webp'
@@ -43,9 +43,8 @@ import {
   CheckCircle2,
   Clock,
   ShieldCheck,
-  Building,
-  ChartCandlestick,
-  ChartPie,
+  Cctv,
+  UserCheck,
 } from "lucide-react";
 
 import { FileText } from "lucide-react";
@@ -53,14 +52,14 @@ import { FileText } from "lucide-react";
 const currentYear = new Date().getFullYear();
 
 export const infos = {
-  name: " Dr. Caio Lins",
+  name: "WA Advocacia",
   email: "contato", // Email desejado pelo cliente
   emailSecundario: "A_Definir", // Email desejado pelo cliente
-  domain: "civel-caio.advespecialista.adv.br", // Sem "www"
+  domain: "waadvocia.com.br", // Sem "www"
   phone: {
-    ddd: "27",
-    firstPart: "99940", // Apenas os 5 primeiros números (incluindo o 9)
-    secondPart: "0815", // Apenas os 4 últimos números
+    ddd: "11",
+    firstPart: "98683", // Apenas os 5 primeiros números (incluindo o 9)
+    secondPart: "6538", // Apenas os 4 últimos números
   },
   phoneSecundario: {
     ddd: "00",
@@ -76,10 +75,10 @@ export const infos = {
     <div>
       {/* <p>Endereço:</p> */}
       <p>Endereço:</p>
-      <p>Av. Angelo Gilbert,</p>
-      <p>nº 109, Sala 101,</p>
-      <p>Bairro Vila Nova Colatina - ES,</p>
-      <p>CEP: 29702-060</p>
+      <p>Av. Dr. Timóteo Penteado,</p>
+      <p>nº 2265, Sala 5,</p>
+      <p>Guarulhos - SP,</p>
+      <p>CEP: 07094-000</p>
     </div>
   ),
   enderecoSecundario: (
@@ -93,11 +92,16 @@ export const infos = {
   expediente: (
     <div>
       <p>Segunda a sexta-feira:</p>
-      <p>8h às 18h</p>
+      <p>
+        9h às 17h (Presencial)
+        <br />
+        <br />
+        <i>Atendimento 24h online</i>
+      </p>
     </div>
   ),
   obs: <span className="italic">A_Definir </span>,
-  instagramProfile: "", // Sem o @
+  instagramProfile: "wa.advocacia.jus", // Sem o @
   instagramProfileSecundario: "",
   facebookProfile: "",
   linkeDinProfile: "",
@@ -133,23 +137,24 @@ const content = {
     hero: {
       minitagIcon: (
         <>
-          <BriefcaseBusiness className="w-4 h-4" />
+          {/* <BriefcaseBusiness className="w-4 h-4" /> */}
           {/* <MapPin className="w-4 h-4" /> */}
-          {/* 🚨 */}
+          🚨
         </>
       ),
-      miniTag: <>ADVOGADO CÍVEL E BANCÁRIO</>,
-      FirstPart: <span>Procurando um </span>,
+      miniTag: <>ESTAMOS DE PLANTÃO - SEJA ATENDIDO AGORA</>,
+      FirstPart: <span>Especialistas em </span>,
       Destaque: (
         <span className="destaque relative italic font-light">
-          Advogado Cível<span className="text-white">?</span>
+          Direito Criminal
         </span>
       ),
       SecondPart: <span></span>,
       subtitle: (
         <p>
-          Atuação em conflitos civis, contratos e problemas com bancos, com
-          estratégia e segurança jurídica.
+          Atuação <strong>URGENTE</strong> em casos de prisão em flagrante,
+          audiência de custódia, Habeas Corpus, liberdade provisória e medidas
+          emergenciais.
         </p>
       ),
       heroDefaultImage: heroDefaultImg, // img da pessoa mobile
@@ -158,15 +163,15 @@ const content = {
       alt: "Imagem ilustrativa da Seção Início",
       ctaButtonAriaLabel:
         "Botão para chamada de ação para contato pelo whatsapp",
-      ctaButtonText: <>Falar com o Advogado agora</>,
+      ctaButtonText: <>Seja atendido agora no WhatsApp</>,
       ctaButtonTextSecondary: <>A_Definir</>,
       obsHero: {
-        icon: <> {/* ⚠️ */}</>,
+        icon: <> ⚠️</>,
         iconTwo: <></>,
         text: (
           <>
-            Atendimento online e presencial (para quem puder comparecer ou
-            residir próximo).
+            A atuação imediata da defesa é decisiva para a proteção da
+            liberdade.
           </>
         ),
         textTwo: <>A_Definir</>,
@@ -188,14 +193,18 @@ const content = {
     //   },
     // },
     emergency: {
-      miniTag: <>A_Definir</>,
-      title: <h1>A_Definir</h1>,
+      miniTag: <>Plantão Criminal 24 Horas</>,
+      title: <h1>Atendimento Imediato em Casos Criminais</h1>,
       subtitle: (
         <div>
-          <p className="mb-6 font-secondFont">A_Definir</p>
+          <p className="mb-6 font-secondFont">
+            Se você ou um familiar foi preso ou está sendo investigado, o
+            atendimento deve ser imediato. Cada minuto é decisivo para garantir
+            direitos, evitar abusos e preparar a defesa adequada.
+          </p>
         </div>
       ),
-      ctaButtonText: <>A_Definir</>,
+      ctaButtonText: <>Falar com Advogado Agora</>,
     },
     authorityAlert: {
       miniTag: <>A_Definir</>,
@@ -209,77 +218,83 @@ const content = {
     },
     important: {
       miniTag: <>ATENÇÃO</>,
-      title: <>O que você precisa saber sobre conflitos cíveis</>,
+      title: <>O que é importante saber</>,
       cards: {
         card1: {
-          title: <>Preciso mesmo de advogado para resolver isso?</>,
+          title: <>Fui preso. Posso ficar calado ou isso piora tudo?</>,
           paragraph: (
             <>
-              Em muitos conflitos civis, ter um advogado desde o início evita
-              prejuízos maiores. A análise jurídica permite identificar
-              direitos, avaliar riscos e definir a estratégia adequada para
-              resolver o problema de forma segura.
+              Mantenha a calma e fique em silêncio, isso é um direito seu e{" "}
+              <strong>não pode ser usado contra você. </strong>
+              <br /> O silêncio não é confissão, entre em contato com um
+              especialista agora mesmo. Falar sem orientação pode piorar tudo.
             </>
           ),
         },
         card2: {
-          title: (
-            <>E se o banco ou a outra parte estiver me cobrando injustamente?</>
-          ),
+          title: <>Meu parente foi preso, o que posso fazer?</>,
           paragraph: (
             <>
-              Situações de cobrança abusiva ou contratos desequilibrados podem
-              ser contestadas judicialmente. A análise do caso permite verificar
-              irregularidades, revisar cláusulas contratuais e buscar a solução
-              jurídica adequada.
+              Descubra imediatamente{" "}
+              <strong>
+                onde ele está custodiado e entre em contato com um advogado.
+              </strong>{" "}
+              <br /> As primeiras horas são decisivas é nesse momento que se
+              definem medidas como flagrante, fiança, liberdade provisória e
+              audiência de custódia.
             </>
           ),
         },
         card3: {
-          title: <>Meu caso ainda tem solução ou já é tarde?</>,
+          title: <>Tem como soltar ele agora? </>,
           paragraph: (
             <>
-              Muitos conflitos ainda podem ser resolvidos mesmo quando parecem
-              complexos. Cada situação precisa ser analisada individualmente
-              para identificar as alternativas jurídicas possíveis e o melhor
-              caminho a seguir.
+              Cada situação exige análise jurídica imediata. O tempo é decisivo:
+              quanto mais rápido agir, maiores as chances de medidas como
+              fiança, liberdade provisória ou relaxamento da prisão.
             </>
           ),
         },
         card4: {
-          title: <>Entrar com processo é sempre a única saída?</>,
+          title: <>Quanto tempo eu tenho para me defender?</>,
           paragraph: (
             <>
-              Nem sempre. Dependendo do caso, é possível buscar soluções por
-              meio de negociação ou medidas estratégicas antes de iniciar um
-              processo judicial. O objetivo é sempre encontrar a forma mais
-              eficaz de resolver o conflito.
+              Desde o primeiro minuto após a prisão. Cada instante é decisivo e
+              pode impactar diretamente a situação jurídica.
+              <br />
+              Quanto antes houver atuação jurídica, maiores são as chances de
+              proteger direitos e buscar a liberdade.
             </>
           ),
         },
       },
       fraseObs: (
-        <>Entre em contato conosco e lhe daremos todo o suporte necessário</>
+        <>
+          Cada caso é diferente. Agir rápido e com orientação jurídica pode
+          mudar completamente o rumo do processo.
+        </>
       ),
-      ctaButtonText: <>Falar conosco agora pelo WhatsApp</>,
+      ctaButtonText: <>Falar agora com um Advogado Criminalista</>,
     },
     features: {
-      miniTag: <>COMO PODEMOS TE AJUDAR</>,
-      FirstPart: <span>Enfrentando</span>,
-      Destaque: <span className="italic font-light">problemas</span>,
-      SecondPart: <span> com bancos, patrimônio ou outros?</span>,
+      miniTag: <>COMO POSSO AJUDAR</>,
+      FirstPart: <span>Defesa criminal</span>,
+      Destaque: (
+        <span className="italic font-light">para momentos decisivos</span>
+      ),
+      SecondPart: <span></span>,
       subtitle: (
-        <>Atuação jurídica para reduzir dívidas e proteger patrimônio.</>
+        <>Apoio jurídico imediato para quem precisa agir sem perder tempo.</>
       ),
       imgFeatures: imgFeatures,
       alt: "Imagem ilustrativa da Features",
-      titleMessageFeature: <>100%</>,
-      subtitleMessageFeature: <> estratégia contra abusos</>,
+      titleMessageFeature: <>Prisão não é o fim.</>,
+      subtitleMessageFeature: <>Defesa imediata pode mudar tudo.</>,
       cards: {
         card1: {
-          title: <>Direito Bancário</>,
+          title: <>Inquérito e Processo Criminal</>,
           subtitle: (
-            <>Defesa e revisão de dívidas bancárias acima de R$50 mil.</>
+            <>Defesa estratégica desde a investigação até o julgamento.</>
           ),
           description: (
             <div>
@@ -289,66 +304,96 @@ const content = {
               A_Definir
             </div>
           ),
-          icon: <Building />,
+          icon: <Scale />,
           buttonLabelModal: "Fale Conosco",
           buttonLabel: "Saiba Mais",
         },
 
         card2: {
-          title: <>Direito Civil - Patrimonial</>,
-          subtitle: (
-            <>Inventário, divórcio, usucapião e disputas patrimoniais.</>
-          ),
+          title: <>Tribunal do Júri</>,
+          subtitle: <>Defesa forte em casos julgados por jurados.</>,
           description: (
             <div>
               A_Definir
               <br />
               <br />
               A_Definir
-            </div>
-          ),
-          icon: <ChartPie />,
-          buttonLabelModal: "Fale Conosco",
-          buttonLabel: "Saiba Mais",
-        },
-
-        card3: {
-          title: <>Direito Civil - Contratos</>,
-          subtitle: (
-            <>Elaboração, análise e revisão de contratos com segurança.</>
-          ),
-          description: (
-            <div>
-              A_Definir
-              <br />
-              <br />
-              A_Definir
-            </div>
-          ),
-          icon: <FileText />,
-          buttonLabelModal: "Fale Conosco",
-          buttonLabel: "Saiba Mais",
-        },
-
-        card4: {
-          title: <>Assessoria Jurídica Recorrente</>,
-          subtitle: (
-            <>Suporte jurídico contínuo para decisões empresariais seguras.</>
-          ),
-          description: (
-            <div>
-              A_Definir
-              <br />
-              A_Definir
-              <br />
             </div>
           ),
           icon: <Gavel />,
           buttonLabelModal: "Fale Conosco",
           buttonLabel: "Saiba Mais",
         },
+
+        card3: {
+          title: <>Audiência de Custódia</>,
+          subtitle: <>Atuação imediata para evitar prisão injusta.</>,
+          description: (
+            <div>
+              A_Definir
+              <br />
+              <br />
+              A_Definir
+            </div>
+          ),
+          icon: <ShieldCheck />,
+          buttonLabelModal: "Fale Conosco",
+          buttonLabel: "Saiba Mais",
+        },
+
+        card4: {
+          title: (
+            <>
+              <i>Habeas Corpus</i>
+            </>
+          ),
+          subtitle: <>Agilidade jurídica para recuperar sua liberdade.</>,
+          description: (
+            <div>
+              A_Definir
+              <br />
+              A_Definir
+              <br />
+            </div>
+          ),
+          icon: <BriefcaseBusiness />,
+          buttonLabelModal: "Fale Conosco",
+          buttonLabel: "Saiba Mais",
+        },
+
+        card5: {
+          title: <>Prisão em Flagrante</>,
+          subtitle: <>Defesa urgente desde o momento da prisão.</>,
+          description: (
+            <div>
+              A_Definir
+              <br />
+              <br />
+              A_Definir
+            </div>
+          ),
+          icon: <Cctv />,
+          buttonLabelModal: "Fale Conosco",
+          buttonLabel: "Saiba Mais",
+        },
+
+        card6: {
+          title: <>Acompanhamento em Delegacias</>,
+          subtitle: <>Acompanhamento jurídico para proteger seus direitos.</>,
+          description: (
+            <div>
+              A_Definir
+              <br />
+              <br />
+              A_Definir
+            </div>
+          ),
+          icon: <UserCheck />,
+          buttonLabelModal: "Fale Conosco",
+          buttonLabel: "Saiba Mais",
+        },
       },
-      ctaButtonText: <>Falar com o Advogado</>,
+      ctaButtonText: <>Receba orientação jurídica agora</>,
     },
     cardsSection: {
       miniTag: <>A_Definir</>,
@@ -400,37 +445,39 @@ const content = {
         img: aboutImg,
         alt: "Imagem ilustrativa da Seção Sobre",
       },
-      miniTag: <>QUEM É O DR CAIO LINS</>,
-      FirstPart: <span> Minha</span>,
-      Destaque: <span className="italic font-light"> trajetória</span>,
+      miniTag: <>QUEM É A WA ADVOCACIA</>,
+      FirstPart: <span> Referência em Direito </span>,
+      Destaque: <span className="italic font-light"> Penal</span>,
       SecondPart: <span></span>,
       subtitle: (
         <>
-          Atuação voltada à defesa em conflitos bancários, civis e empresariais.
+          Atuação responsável, estratégica e humana nos momentos mais críticos
         </>
       ),
       paragraph: (
         <div>
-          Meu trabalho é ajudar pessoas e empresas a enfrentarem conflitos
-          jurídicos com estratégia, segurança e clareza.
+          A WA Advocacia é liderada pelo Dr. Winicius Gomes Mendonça, advogado
+          atuante desde 2019 e figura pública reconhecida em Guarulhos, onde
+          também exerce o cargo de secretário adjunto. Ao longo de sua
+          trajetória, já atuou na defesa e representação de empresários e
+          figuras públicas em casos cíveis e criminais.
           <br />
-          <br />
-          Atuo principalmente em demandas contra instituições financeiras,
-          disputas patrimoniais e conflitos contratuais, buscando sempre
-          soluções que reduzam riscos, reorganizem passivos e protejam os
-          interesses dos meus clientes.
-          <br />
-          <br />
-          Cada caso é analisado de forma individual, com foco em encontrar o
-          melhor caminho jurídico para resolver o problema com eficiência e
-          segurança.
+          <br />O escritório conta ainda com outros sócios e profissionais
+          especializados, formando uma equipe preparada para lidar com situações
+          jurídicas complexas. A WA Advocacia trabalha com estratégia, discrição
+          e responsabilidade para proteger os interesses de seus clientes.
         </div>
       ),
       benefits: {
         cards: {
           card1: {
-            title: <>A_Definir</>,
-            description: <>A_Definir</>,
+            title: <>Defesa estratégica desde a primeira hora</>,
+            description: (
+              <>
+                Atuação imediata para proteger sua liberdade em cada decisão do
+                caso.
+              </>
+            ),
             icon: (
               <>
                 {" "}
@@ -439,8 +486,13 @@ const content = {
             ),
           },
           card2: {
-            title: <>A_Definir</>,
-            description: <>A_Definir</>,
+            title: <>Transparência Real</>,
+            description: (
+              <>
+                Você sabe exatamente o que pode acontecer, os riscos envolvidos
+                e os próximos passos.
+              </>
+            ),
             icon: (
               <>
                 {" "}
@@ -450,7 +502,7 @@ const content = {
           },
         },
       },
-      ctaButtonText: <>Falar diretamente comigo</>,
+      ctaButtonText: <>Falar diretamente com Especialista</>,
       buttonModalLabelAbout: "Continuar lendo",
       modal: (
         <p className="font-secondFont">
@@ -469,57 +521,66 @@ const content = {
       paragraphModalCta: "Entre em contato",
       ctaButtonAriaLabel: "Botão para entrar em contato",
 
-      // aboutSocial: {
-      //   img: {
-      //     img: aboutSocialImg,
-      //     alt: `Foto do Instagram do ${infos.name}`,
-      //     altDefault: "Imagem ilustrativa da Seção de Redes Sociais",
-      //   },
-      //   miniTag: <>A_Definir</>,
-      //   title: <>A_Definir</>,
-      //   subtitle: <>A_Definir</>,
-      //   paragraph: <p></p>,
-      //   labelInstagram: "Siga-nos no Instagram",
-      //   labelFacebook: "Siga-nos no Facebook",
-      //   labelLinkedin: "Siga-nos no LinkedIn",
-      //   labelX: "Siga-nos no X",
-      //   labelTiktok: "Siga-nos no Tik Tok",
-      //   labelYoutube: "Siga-nos no Youtube",
-      // },
+      aboutSocial: {
+        img: {
+          img: aboutSocialImg,
+          alt: `Foto do Instagram do ${infos.name}`,
+          altDefault: "Imagem ilustrativa da Seção de Redes Sociais",
+        },
+        miniTag: <>Redes sociais</>,
+        title: <>Conecte-se conosco</>,
+        subtitle: (
+          <>
+            Acompanhe nossas redes sociais para se manter informado sobre
+            conteúdos jurídicos, atualizações e temas relevantes das áreas de
+            atuação.
+          </>
+        ),
+        paragraph: <p></p>,
+        labelInstagram: "Siga-nos no Instagram",
+        labelFacebook: "Siga-nos no Facebook",
+        labelLinkedin: "Siga-nos no LinkedIn",
+        labelX: "Siga-nos no X",
+        labelTiktok: "Siga-nos no Tik Tok",
+        labelYoutube: "Siga-nos no Youtube",
+      },
     },
     ctaSection: {
       miniTag: <>Fale conosco</>,
-      title: <h1>Fale agora com o Advogado</h1>,
+      title: <h1>Não espere mais para proteger sua liberdade</h1>,
       subtitle: (
         <div>
           <p className="mb-6 font-secondFont">
-            Se você enfrenta problemas com bancos, contratos ou questões civis,
-            fale agora e receba orientação jurídica.
+            Cada decisão atrasada pode agravar o processo. Atuamos com rapidez,
+            estratégia e acompanhamento direto desde o primeiro momento.
           </p>
         </div>
       ),
       container: {
         topics: {
-          topic1: <>Análise inicial do seu caso</>,
-          topic2: <>Atendimento direto com o Advogado, sem intermediários</>,
+          topic1: <>Análise inicial do seu caso criminal</>,
+          topic2: <>Atendimento direto com advogado criminalista</>,
           topic3: <>Resposta rápida e acompanhamento pelo WhatsApp</>,
-          topic4: <>Estratégia jurídica clara desde o primeiro contato</>,
-          topic5: <>Orientação segura para proteger seus direitos</>,
+          topic4: <>Atuação iniciada imediatamente após a análise</>,
+          topic5: (
+            <>Mais segurança para você e sua família em um momento decisivo</>
+          ),
         },
       },
-      ctaButtonText: <>Quero falar com o Advogado agora</>,
+      ctaButtonText: <>Converse agora com um Advogado Criminalista</>,
       ctaButtonAriaLabel:
         "Botão para chamada de ação para contato pelo whatsapp",
     },
     steps: {
-      miniTag: <>COMO FUNCIONA</>,
-      FirstPart: <span>Do primeiro contato </span>,
-      Destaque: <span className="italic font-light">à solução</span>,
-      SecondPart: <span> do seu caso</span>,
+      miniTag: <>COMO ATUAMOS NO SEU CASO CRIMINAL</>,
+      FirstPart: <span> Atuação estratégica para</span>,
+      Destaque: <span className="italic font-light"> proteger </span>,
+      SecondPart: <span>seus direitos e sua liberdade</span>,
 
       subtitle: (
         <>
-          Um processo claro, estratégico e conduzido diretamente por Advogado.
+          Cada caso é analisado com rapidez, estratégia e total discrição desde
+          o início.
         </>
       ),
       img: imgSteps,
@@ -527,32 +588,50 @@ const content = {
       cards: {
         card1: {
           stepNumber: 1,
-          cardTitle: <>Conte seu caso</>,
+          cardTitle: <>Análise imediata da situação criminal</>,
           cardDescription: (
-            <>Explique sua situação e receba uma análise inicial.</>
+            <>
+              Analisamos o que já aconteceu no caso, como prisão, flagrante,
+              intimação ou investigação, identificando riscos, ilegalidades e as
+              melhores medidas a serem tomadas desde o início.
+            </>
           ),
         },
         card2: {
           stepNumber: 2,
-          cardTitle: <>Análise jurídica</>,
+          cardTitle: <>Medidas urgentes para reduzir riscos imediatos</>,
           cardDescription: (
-            <>Seu caso é avaliado com estratégia e base legal.</>
+            <>
+              Com base na análise, adotamos as providências jurídicas cabíveis
+              para tentar garantir a liberdade, evitar prisões desnecessárias e
+              corrigir falhas que possam prejudicar o processo.
+            </>
           ),
         },
         card3: {
           stepNumber: 3,
-          cardTitle: <>Definição da estratégia</>,
-          cardDescription: <>Identificamos o melhor caminho para seu caso.</>,
+          cardTitle: <>Definição da melhor estratégia de defesa</>,
+          cardDescription: (
+            <>
+              Traçamos uma estratégia clara para o caso, avaliando provas,
+              depoimentos e possibilidades legais, sempre focando na proteção
+              dos direitos e na redução de danos ao longo do processo.
+            </>
+          ),
         },
         card4: {
           stepNumber: 4,
-          cardTitle: <>Atuação e acompanhamento</>,
+          cardTitle: <>Acompanhamento próximo e comunicação clara</>,
           cardDescription: (
-            <>Cuidamos de todo o processo com suporte contínuo.</>
+            <>
+              Você e sua família acompanham cada etapa com explicações
+              objetivas, prazos definidos e orientação constante, sabendo
+              exatamente o que está sendo feito e o que esperar.
+            </>
           ),
         },
       },
-      ctaButtonText: <>Quero análise do meu caso</>,
+      ctaButtonText: <>Falar diretamente comigo</>,
     },
     blog: {
       miniTag: <>A_Definir</>,
@@ -592,21 +671,30 @@ const content = {
       ],
     },
     diferences: {
-      miniTag: <>A_Definir</>,
-      title: <>A_Definir</>,
-      subtitle: <>A_Definir</>,
+      miniTag: <>Diferenciais do Atendimento</>,
+      title: <>Atendimento Criminal Estratégico e Imediato</>,
+      subtitle: (
+        <>
+          Atendimento direto com advogado criminalista experiente, com atuação
+          estratégica desde a fase policial até o processo judicial.
+        </>
+      ),
       cards: {
         card1: {
           icon: Check,
-          text: <>A_Definir</>,
+          text: <>Sigilo absoluto</>,
         },
         card2: {
           icon: Check,
-          text: <>A_Definir</>,
+          text: <>Defesa técnica e imediata</>,
         },
         card3: {
           icon: Check,
-          text: <>A_Definir</>,
+          text: <>Acompanhamento em delegacia</>,
+        },
+        card4: {
+          icon: Check,
+          text: <>Atendimento emergencial 24h</>,
         },
       },
     },
@@ -660,50 +748,52 @@ const content = {
       subtitle: <>Confira as perguntas abaixo para esclarecer suas dúvidas.</>,
       questions: {
         question1: {
-          question: <>O banco pode cobrar juros ou taxas abusivas?</>,
+          question: <>Como funciona a contratação e o atendimento?</>,
           answer: (
             <>
-              Em alguns casos, eles fazem. Contratos bancários podem conter
-              juros acima da média de mercado, tarifas indevidas ou cláusulas
-              que colocam o cliente em desvantagem. Quando isso acontece, é
-              possível contestar essas cobranças e buscar a revisão do contrato
-              para restabelecer o equilíbrio da relação com a instituição
-              financeira.
+              O primeiro passo é o contato direto via WhatsApp para agendamento
+              de uma consulta (presencial ou online). Analisaremos os fatos
+              imediatamente para definir a viabilidade da defesa e o
+              planejamento estratégico necessário.
             </>
           ),
         },
         question2: {
-          question: <>Mesmo com parcelas atrasadas ainda dá pra resolver?</>,
+          question: <>Quanto tempo dura um processo criminal?</>,
           answer: (
             <>
-              Sim. Estar com parcelas em atraso não impede a análise do contrato
-              ou a adoção de medidas jurídicas. Em muitos casos, a revisão
-              contratual ou uma estratégia jurídica adequada pode ajudar a
-              reorganizar a dívida ou reduzir cobranças abusivas.
+              O tempo é variável e depende do rito processual (comum, júri,
+              especial) e da agilidade do Judiciário. Durante a análise do caso,
+              apresentamos um panorama das etapas prováveis e trabalhamos para
+              que não haja excesso de prazo na tramitação.
             </>
           ),
         },
         question3: {
-          question: (
-            <>Como saber se meu contrato com o banco tem algo errado?</>
-          ),
+          question: <>Quais documentos são essenciais para a defesa?</>,
           answer: (
             <>
-              A forma mais segura é por meio de uma análise jurídica do
-              contrato. Nessa avaliação são verificados fatores como taxa de
-              juros, encargos aplicados, tarifas cobradas e eventuais cláusulas
-              abusivas que possam prejudicar o cliente.
+              É fundamental apresentar o Boletim de Ocorrência, cópia do
+              Inquérito Policial (se houver), documentos pessoais e qualquer
+              prova que ajude a desconstruir a acusação (fotos, mensagens, lista
+              de testemunhas). Caso você não tenha o processo, nós realizamos a
+              busca nos sistemas judiciais.
             </>
           ),
         },
         question4: {
-          question: <>Entrar na justiça contra banco vale a pena?</>,
+          question: (
+            <>
+              O escritório atua com consultoria preventiva (Criminal
+              Compliance)?
+            </>
+          ),
           answer: (
             <>
-              Depende da situação. Quando há cobrança indevida, juros abusivos
-              ou cláusulas irregulares, a atuação jurídica pode buscar a revisão
-              do contrato, a devolução de valores pagos a mais ou a
-              reestruturação da dívida de forma mais justa.
+              Sim. Atuamos de forma consultiva para empresas e indivíduos,
+              visando mitigar riscos de investigações, garantir a conformidade
+              com a lei e evitar que condutas do dia a dia sejam interpretadas
+              como ilícitos penais.
             </>
           ),
         },
