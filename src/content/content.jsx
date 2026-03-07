@@ -241,7 +241,7 @@ const content = {
               </strong>{" "}
               <br /> As primeiras horas são decisivas é nesse momento que se
               definem medidas como flagrante, fiança, liberdade provisória e
-              audiência de custódia
+              audiência de custódia.
             </>
           ),
         },
