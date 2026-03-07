@@ -690,7 +690,7 @@ const content = {
         },
         card3: {
           icon: Check,
-          text: <>Acompanhamento em delegacia</>,
+          text: <>Acompanhamento em delegacias</>,
         },
         card4: {
           icon: Check,
