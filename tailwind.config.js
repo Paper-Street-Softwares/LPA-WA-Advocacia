@@ -23,9 +23,9 @@ export default {
       colors: {
         // Principais
         primaryDark: "#000000",
-        primaryLight: "#FFD03E",
-        secondary: "#E9E7E0",
-        terciary: "#F7F6F1",
+        primaryLight: "#FFFFFF",
+        secondary: "#EBEBEB",
+        terciary: "#F5F5F5",
         quartenary: "#FCFCFA",
         borderImage: "#292929",
 
