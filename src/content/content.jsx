@@ -76,7 +76,8 @@ export const infos = {
       {/* <p>Endereço:</p> */}
       <p>Endereço:</p>
       <p>Av. Dr. Timóteo Penteado,</p>
-      <p>nº 2265, Sala 5 Guarulhos - SP,</p>
+      <p>nº 2265, Sala 5,</p>
+      <p>Guarulhos - SP,</p>
       <p>CEP: 07094-000</p>
     </div>
   ),
@@ -151,8 +152,9 @@ const content = {
       SecondPart: <span></span>,
       subtitle: (
         <p>
-          Atuação URGENTE em casos de prisão em flagrante, audiência de
-          custódia, Habeas Corpus, liberdade provisória e medidas emergenciais.
+          Atuação <strong>URGENTE</strong> em casos de prisão em flagrante,
+          audiência de custódia, Habeas Corpus, liberdade provisória e medidas
+          emergenciais.
         </p>
       ),
       heroDefaultImage: heroDefaultImg, // img da pessoa mobile

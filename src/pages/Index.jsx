@@ -125,7 +125,7 @@ export default function Index() {
                 phone={true}
                 phoneSecond={false}
                 expediente={true}
-                adress={false}
+                adress={true}
                 email={true}
                 emailSecond={false}
                 fraseFooter={true} // frase Google LLC
