@@ -106,7 +106,7 @@ function FeaturesNovaTemplate({ colorMode, frasesDestaque, accordion, modal }) {
     >
       <SectionWrapper>
         <section className="relative font-mainFont w-full">
-          <div className="mx-auto">
+          <div className="mx-auto flex flex-col gap-16">
             <div className="flex flex-col-reverse desktop1:flex-row gap-12 items-center">
               {/* Imagem com destaque */}
               <div>
@@ -294,6 +294,42 @@ function FeaturesNovaTemplate({ colorMode, frasesDestaque, accordion, modal }) {
                     ))}
                   </div>
                 )}
+              </div>
+            </div>
+
+            <div className="flex flex-col desktop1:flex-row-reverse gap-12 items-center">
+              <div>
+                {" "}
+                <MotionDivDownToUp
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="relative order-2 lg:order-1 w-full m-auto"
+                >
+                  <div
+                    className={`relative overflow-hidden rounded-3xl shadow-2xl  ${image}`}
+                  >
+                    <img
+                      src={content.texts.features.sectionAdd.imgProfissional}
+                      alt={content.texts.features.alt}
+                      className="w-full h-full object-cover scale-105 hover:scale-100 rounded-2xl transition-transform duration-700"
+                      width={621}
+                      height={621}
+                    />
+                  </div>
+                </MotionDivDownToUp>
+              </div>
+
+              <div className="order-1 lg:order-2 space-y-8 w-full desktop1:w-[50%]">
+                <SectionHeaderNovo
+                  miniTitle={content.texts.features.sectionAdd.miniTag}
+                  title={content.texts.features.sectionAdd.FirstPart}
+                  destaque={content.texts.features.sectionAdd.Destaque}
+                  secondPart={content.texts.features.sectionAdd.SecondPart}
+                  subtitle={content.texts.features.sectionAdd.subtitle}
+                  type="article"
+                  colorMode={colorMode}
+                />
               </div>
             </div>
           </div>

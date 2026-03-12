@@ -4,6 +4,7 @@ import heroDefaultImg from "../assets/imgs/hero/lawHero.webp";
 import heroDefaultMobileImg from "../assets/imgs/hero/lawHeroMobile.webp";
 
 import imgFeatures from "../assets/imgs/features/imgServices.webp";
+import imgProfissional from "../assets/imgs/features/imgProfissional.webp";
 
 import aboutImg from "../assets/imgs/about/aboutImg.webp";
 // import team1 from '../assets/imgs/team/team1.webp'
@@ -394,6 +395,18 @@ const content = {
         },
       },
       ctaButtonText: <>Receba orientação jurídica agora</>,
+      sectionAdd: {
+        FirstPart: <span>Advocacia especializada na defesa da mulher</span>,
+        Destaque: <span className="italic font-light"></span>,
+        SecondPart: <span></span>,
+        subtitle: (
+          <>
+            Atendimento jurídico focado em proteger seus direitos, sua segurança
+            e sua dignidade em momentos difíceis.
+          </>
+        ),
+        imgProfissional: imgProfissional,
+      },
     },
     cardsSection: {
       miniTag: <>A_Definir</>,
